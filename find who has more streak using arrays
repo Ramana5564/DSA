@@ -1,0 +1,82 @@
+/* package codechef; // don't place package name! */
+/* Coding question link : https://www.codechef.com/practice/PJAAR01/problems/CS2023_STK */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		for(int i=0;i<t;i++){
+		    int n =sc.nextInt();
+		    int A[] = new int[n];
+		    int B[] = new int[n];
+		    for(int j=0;j<n;j++){
+		        int a = sc.nextInt();
+		        A[j] = a;
+		    }
+		    for(int k = 0;k<n;k++){
+		        int b = sc.nextInt();
+		        B[k] = b;
+		    }
+		  //  Om streak part
+		    int P[] = new int[n];
+		    for (int q = 0 ; q<n;q++){
+		        P[q] = 0;
+		    }
+		    int c =0;
+		    for(int l= 0;l<n;l++){
+		        if(A[l]!=0){
+		            P[c]+=1;
+		        }
+		        else if (A[l]==0){
+		            c+=1;
+		        }
+		    }
+		    int omstreak = 0;
+		    for(int m=0;m<n;m++){
+		        if(P[m]>omstreak){
+		            omstreak = P[m];
+		        }
+		    }
+		  //  Addy streak part
+		    int Q[] = new int[n];
+		    for (int q = 0 ; q<n;q++){
+		        Q[q] = 0;
+		    }
+		    int d =0;
+		    for(int l= 0;l<n;l++){
+		        if(B[l]!=0){
+		            Q[d]+=1;
+		        }
+		        else if (B[l]==0){
+		            d+=1;
+		        }
+		    }
+		    int addystreak = 0;
+		    for(int m=0;m<n;m++){
+		        if(Q[m]>addystreak){
+		            addystreak = Q[m];
+		        }
+		    }
+		    
+		  //   whose streak is more
+		    if(omstreak>addystreak){
+		        System.out.println("Om");
+		    }
+		    else if(addystreak>omstreak){
+		        System.out.println("Addy");
+		    }
+		    else{
+		        System.out.println("Draw");
+		    }
+		    
+		}
+	}
+}
