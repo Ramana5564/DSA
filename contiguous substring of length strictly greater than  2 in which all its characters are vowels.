@@ -1,0 +1,43 @@
+/* package codechef; // don't place package name! */
+/* Question : https://www.codechef.com/practice/PJAST01/problems/HAPPYSTR */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		for(int i =0;i<t;i++){
+		    String s = sc.next();
+		    int len = s.length();
+		    for(int j =0;j+2<len;j++){
+		        String a = s.substring(j,j+3);
+		        int n = 0;
+		        for(int k = 0;k<3;k++){
+		            String cha = a.substring(k,k+1);
+		            if (cha.equals("a")) n+=1;
+		            if (cha.equals("e")) n+=1;
+		            if (cha.equals("i")) n+=1;
+		            if (cha.equals("o")) n+=1;
+		            if (cha.equals("u")) n+=1;
+		        }
+		        if(n==3) {
+		            System.out.println("Happy");
+		            break;
+		        }
+		        else if(n<3 && j+3==len){
+		            System.out.println("Sad");
+		            break;
+		        }
+		 
+		        
+		    }
+		}
+	}
+}
